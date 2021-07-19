@@ -1,25 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
 
-function App() {
+function App(props) {
+  const [email, setEmail] = useState('');
+  function handleEmail() {
+    // salvar no storage
+
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>GamerShop Mega Promoção</h1>
+      <h2>Cadastre seu e-mail para receber as promoções</h2>
+      <input className="emailInput" placeholder="Digite seu e-mail" value={email} onChange={e => setEmail(e.target.value)}/>
+      <button type="button" onClick={handleEmail}>Cadastrar</button>
     </div>
-  );
+  )
 }
 
 export default App;
